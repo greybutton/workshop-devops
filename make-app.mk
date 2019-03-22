@@ -8,3 +8,9 @@ app-build:
 
 app-bash:
 	docker-compose run --user=$(USER) app bash
+
+app-setup: app-build
+	docker-compose run --user=$(USER) app bundle install
+
+app-build:
+	docker-compose build
