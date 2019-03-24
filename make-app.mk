@@ -20,3 +20,6 @@ development-setup-env:
 
 test:
 	docker-compose run app bin/rails test
+
+terraform-vars-generate:
+	ansible-playbook ansible/terraform.yml -i ansible/production
