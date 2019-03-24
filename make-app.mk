@@ -9,7 +9,7 @@ app-build:
 app-bash:
 	docker-compose run app bash
 
-app-setup: development-setup-env app-build app-db-prepare
+app-setup: app-build app-db-prepare
 	docker-compose run app bundle install
 
 app-db-prepare:
@@ -20,6 +20,3 @@ development-setup-env:
 
 test:
 	docker-compose run app bin/rails test
-
-terraform-vars-generate:
-	ansible-playbook ansible/terraform.yml -i ansible/production -vv
