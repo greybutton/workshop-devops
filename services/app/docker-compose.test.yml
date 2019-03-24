@@ -10,5 +10,8 @@ services:
       context: .
       dockerfile: Dockerfile.production
     command: make test
+    environment:
+      DATABASE_USERNAME: web
+      DATABASE_HOST: db
     depends_on:
       - db

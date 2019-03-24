@@ -6,3 +6,8 @@ install:
 
 start:
 	bin/rails s
+
+test:
+	bin/setup && bin/rails test
+
+.PHONY: all test clean
