@@ -27,3 +27,6 @@ vendor
 
 .env
 .terraform
+secrets.auto.tfvars
+*.tfstate
+*.secret.yml
