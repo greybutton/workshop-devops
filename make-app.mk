@@ -18,3 +18,5 @@ app-db-prepare:
 development-setup-env:
 	ansible-playbook ansible/development.yml -i ansible/development -vv
 
+test:
+	docker-compose run app bin/rails test
