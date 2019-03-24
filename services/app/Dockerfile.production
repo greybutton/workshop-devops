@@ -21,3 +21,6 @@ RUN apt-get update -qq \
 
 ENV BUNDLE_PATH $PROJECT_ROOT/vendor/bundle
 ENV GEM_HOME $PROJECT_ROOT/vendor/bundle
+
+COPY Gemfile Gemfile.lock $PROJECT_ROOT/
+RUN bundle install

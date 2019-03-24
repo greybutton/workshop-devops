@@ -1,0 +1,6 @@
+rails_env: development
+rack_env: development
+app_port: 3000
+rails_log_to_stdout: enabled
+database_host: db
+database_username: postgres

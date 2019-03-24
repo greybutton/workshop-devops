@@ -2,6 +2,7 @@ version: '3.3'
 
 services:
   app:
+    env_file: ".env"
     build:
       context: services/app
       dockerfile: Dockerfile.development
@@ -10,11 +11,17 @@ services:
       - "~/.bash_history:/.bash_history"
       - "./services/app:/usr/src/app:cached"
       - "/tmp:/tmp:delegated"
+    depends_on:
+      - db
   nginx:
     build:
       context: services/nginx
       dockerfile: Dockerfile
     ports:
       - "8080:80"
+    volumes:
+      - "./services/nginx/domain.conf:/etc/nginx/conf.d/default.conf"
     depends_on:
       - app
+  db:
+    image: postgres:10.3-alpine
