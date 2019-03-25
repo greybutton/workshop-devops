@@ -1,0 +1,12 @@
+---
+# ansible_python_interpreter: "/usr/bin/env python3"
+
+workshop_devops_repository: "git@github.com:greybutton/workshop-devops.git"
+workshop_devops_directory_to_clone: /var/tmp/workshop_devops
+workshop_devops_image_name: "greybutton/workshop-devops"
+workshop_devops_nginx_image_name: "greybutton/workshop-devops-nginx"
+workshop_devops_port: 4000
+workshop_devops_docker_network: "workshop-devops"
+
+docker_install_compose: false
+docker_package_state: latest

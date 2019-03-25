@@ -1,4 +1,12 @@
 ---
+ansible_python_interpreter: "/usr/bin/env python3"
 rails_env: production
 rack_env: production
+app_port: 4000
 rails_log_to_stdout: enabled
+database_host: db
+database_username: postgres
+workshop_devops_rails_env: production
+workshop_devops_run_user: root
+workshop_devops_run_user_home: /root
+workshop_devops_env_file: "{{ workshop_devops_run_user_home }}/.env"
