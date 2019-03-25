@@ -72,7 +72,7 @@
         #   awslogs-region: '{{ workshop_devops_aws_region }}'
         restart_policy: always
         published_ports:
-          - "80:8080"
+          - "8080:80"
         networks:
           - name: "{{ workshop_devops_docker_network }}"
       tags: [webserver]
@@ -83,6 +83,7 @@
         name: app
         image: "{{ workshop_devops_image_name }}:{{ workshop_devops_image_tag }}"
         state: started
+        command: sh -c "bin/rails s"
         restart_policy: always
         env_file: "{{ workshop_devops_env_file }}"
         env:
